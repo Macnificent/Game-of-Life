@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>
+			Game of Life
+		</title>
+		<link rel="stylesheet" type="text/css" href="style/lifeStyle.css" media="screen"></style>
+		<script type="text/javascript" src="js/utils/three.min.js"></script>
+		<script type="text/javascript" src="js/utils/THREEx.FullScreen.js"></script>
+		<script type="text/javascript" src="js/utils/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/life.js"></script>
+		<script type="text/javascript" src="js/controls.js"></script>
+		<script type="text/javascript">
+			jQuery(function(){
+				initCanvas();
+				initEventHandlers();
+				initControls();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="controlBtn" class="roundedCorners">
+			<b>Controls</b>
+		</div>
+		<div id="controlContainer" class="roundedCorners">
+			<div class="controlItem">
+				<b>Start/Stop</b>
+				<div id="startStop" class="start">
+					&nbsp;
+				</div>
+			</div>
+			<div class="controlItem">
+				<b>Generation counter</b>
+				<div id="genCount">
+				</div>
+			</div>
+			<div class="controlItem">
+				<b>Tick delay</b>
+				</br></br>
+				<select id="tickDelay">
+					<option value="10">10 ms</option>
+					<option value="50">50 ms</option>
+					<option value="100" selected>100 ms</option>
+					<option value="500">500 ms</option>
+					<option value="1000">1000 ms</option>
+					<option value="1500">1500 ms</option>
+					<option value="2000">2000 ms</option>
+				</select>
+			</div>
+			<div class="controlItem">
+				<b>Reset</b>
+				<div id="reset">
+					&nbsp;
+				</div>
+			</div>
+			<div class="controlItem">
+				<b>Load seed</b>
+			</div>
+		</div>
+		<div id="controlTipsContainer" class="roundedCorners">
+				<h3>Conways</h3>
+				<h3>Game of Life</h3>
+			<div class="infoItem">
+				Rules:
+			</div>
+			<div class="infoItem">
+				<b>1.</b> 
+				Any live cell with fewer than two live neighbours dies, as if caused by under-population. 
+			</div>
+			<div class="infoItem">
+				<b>2.</b>
+				Any live cell with two or three live neighbours lives on to the next generation. 
+			</div>
+			<div class="infoItem">
+				<b>3.</b>
+				Any live cell with more than three live neighbours dies, as if by overcrowding. 
+			</div>
+			<div class="infoItem">
+				<b>4.</b> 
+				Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+			</div>
+			Click on any cube surface to make it live.
+			</br>
+			Press SPACE to start/stop.
+			</br>
+			Press R to reset.
+			</br>
+			Use SCROLL to zoom in and out.
+			</br>
+			Hold SHIFT and move mouse to change camera view.
+			</br>
+			Press F for fullscreen.
+			</br>
+			Press C to show/hide control panels.
+			</br></br>
+			<a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_blank"><i>Wikipedia article</i></a>
+		</div>
+		<div id="playBackState" class="roundedCorners">
+			<span id="stateText">Paused</span>
+		</div>
+		<div id="fps"></div>
+		<div id="container">
+		</div>
+	</body>
+</html>

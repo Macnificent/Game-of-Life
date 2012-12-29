@@ -1,0 +1,150 @@
+body{
+	font-family: "Lucida Console";
+
+	/* IE10 Consumer Preview */ 
+background-image: -ms-radial-gradient(center, ellipse farthest-corner, #FF5C5C 0%, #00A3EF 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-radial-gradient(center, ellipse farthest-corner, #FF5C5C 0%, #00A3EF 100%);
+
+/* Opera */ 
+background-image: -o-radial-gradient(center, ellipse farthest-corner, #FF5C5C 0%, #00A3EF 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #FF5C5C), color-stop(1, #00A3EF));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #FF5C5C 0%, #00A3EF 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: radial-gradient(ellipse farthest-corner at center, #FF5C5C 0%, #00A3EF 100%);
+}
+
+#controlContainer{
+	position: absolute;
+	top:10px;
+	left:17%;
+	width:45%;
+	height:10%;
+	background-color: rgba(186, 199, 223, 0.5);
+	display:none;
+	overflow:auto;
+	padding:8px;
+}
+
+.controlItem{
+	float: left;
+	height:96%;
+	width:auto;
+	margin-left: 15px;
+	font-size:13px;
+}
+
+#startStop{
+	margin-top:8px;
+	margin-left: 10px;
+	width:50px;
+	height:50px;
+	cursor:hand;
+}
+
+.start{
+	background: url('img/startBtn.png') no-repeat center;
+}
+
+.stop{
+	background: url('img/stopBtn.png') no-repeat center;
+}
+
+#reset{
+	margin-top:5px;
+	width:50px;
+	height:50px;
+	cursor:hand;
+	background: url('img/rewindBtn.png') no-repeat center;
+}
+
+#genCount{
+	height:25px;
+	width:160px;
+	margin-top:20px;
+	padding-top:10px;
+	padding-left: 8px;	
+	background-color: rgba(224, 211, 169, 0.5);
+	border: 1px solid #508044;
+	font-size:16px;
+	font-weight: bold;
+	text-align:left;
+}
+
+#controlBtn{
+	position:absolute;
+	top:20px;
+	left:4%;
+	width:8%;
+	height:20px;
+	padding-top:5px;
+	background-color: rgba(186, 199, 223, 0.5);
+	//opacity: 0.7;
+	text-align: center;
+	cursor: hand;
+}
+
+
+#controlBtn:hover{
+	background-color: #508044;	
+}
+
+#controlTipsContainer{
+	position: absolute;
+	top:15%;
+	left: 14px;
+	width:15%;
+	height: 500px;
+	background-color: rgba(186, 199, 223, 0.5);
+	display:none;
+	padding:10px;
+	font-size:11px;
+	overflow: auto;
+}
+
+#fps{
+	position: absolute;
+	right:20px;	
+	top:8%;
+	width:90px;
+	height:30px;
+	/*background-color: rgba(186, 199, 223, 0.5);*/
+	padding:5px;
+	text-align:center
+}
+
+.roundedCorners{
+	border-radius: 24px; 
+	-moz-border-radius: 24px; 
+	-webkit-border-radius: 24px; 
+	border: 1px solid #508044;	
+}
+
+.infoItem{
+	margin:10px;
+}
+
+h2{
+	font-weight: bold;
+	font-size: 15px;
+	margin-left:15px;
+}
+
+#playBackState{
+	position: absolute;
+	top:20px;
+	right:20px;
+	width:100px;
+	height:20px;
+	text-align: center;
+	padding-top:5px;
+	background-color: rgba(186, 199, 223, 0.5);
+	font-weight: bold;
+	
+}
