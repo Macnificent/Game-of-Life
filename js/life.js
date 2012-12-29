@@ -282,7 +282,6 @@ function findCellIndex(cellID){
 }
 
 function setCellState(cell){
-	console.log(cell.scale.y);
 	if(cell._cellState){
 		cell.material.color.setHex(cellDeadColor);
 		cell.material.opacity = 0.3;
@@ -326,6 +325,30 @@ function applyLifeChanges(){
 		setCellState(cellUpdateArray[i]);
 	}
 	cellUpdateArray.length = 0;
+}
+
+function setSeed(selectedSeed){
+	var seedObject = getSeedObject(selectedSeed);
+			
+	//For now center seed pattern
+	var startPosRow = Math.round(_cellPosGrid.length/2);
+	var startPosCol = Math.round(_cellPosGrid[0][0].length/2);
+	var currentPosCol = startPosCol;
+
+	for(var j = 0; j < seedObject.rows; j++){
+		for(var i = 0; i < seedObject.cols; i++){
+
+			if(seedObject.pattern[j][i] == 1){
+				var cell = getCellByID(_cellPosGrid[startPosRow][0][currentPosCol]);
+				setCellState(cell);
+			}
+			
+			currentPosCol++;
+		}	
+		
+		startPosRow++;
+		currentPosCol = startPosCol;
+	}
 }
 
 function getLivingNeighbours(gridIndex){
@@ -405,6 +428,17 @@ function getCellStateByID(cellID){
 	for(var i = 0; i< _cellGrid.children.length; i++){
 		if(_cellGrid.children[i].id == cellID){
 			return 	_cellGrid.children[i]._cellState;
+		}	
+	}
+	
+	return false;
+}
+
+
+function getCellByID(cellID){
+	for(var i = 0; i< _cellGrid.children.length; i++){
+		if(_cellGrid.children[i].id == cellID){
+			return 	_cellGrid.children[i];
 		}	
 	}
 	

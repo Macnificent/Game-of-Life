@@ -9,6 +9,7 @@
 		<script type="text/javascript" src="js/utils/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="js/life.js"></script>
 		<script type="text/javascript" src="js/controls.js"></script>
+		<script type="text/javascript" src="js/seeds.js"></script>
 		<script type="text/javascript">
 			jQuery(function(){
 				initCanvas();
@@ -54,6 +55,24 @@
 			</div>
 			<div class="controlItem">
 				<b>Load seed</b>
+				</br></br>
+				<select id="seedSelect">
+					<option value="0">- Select -</option>
+					<optgroup label="Still lifes">
+					<option value="block">Block</option>
+					<option value="beehive">Beehive</option>
+					<option value="loaf">Loaf</option>
+					<option value="boat">Boat</option>
+					<optgroup label="Oscillators">
+					<option value="blinker">Blinker</option>
+					<option value="beacon">Beacon</option>
+					<option value="toad">Toad</option>
+					<option value="pulsar">Pulsar</option>
+					<option value="pentadecathlon">Pentadecathlon</option>
+					<optgroup label="Spaceships">
+					<option value="glider">Glider</option>
+					<option value="lwss">LWSS</option>
+				</select>
 			</div>
 		</div>
 		<div id="controlTipsContainer" class="roundedCorners">

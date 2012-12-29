@@ -136,6 +136,10 @@ h2{
 	margin-left:15px;
 }
 
+.seedItemBold{
+	font-weight: bold;
+}
+
 #playBackState{
 	position: absolute;
 	top:20px;

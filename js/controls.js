@@ -11,6 +11,10 @@ function initControls(){
 	});	
 	
 	$("#reset").click(resetLife);
+	
+	$("#seedSelect").change(function(){
+		setSeed($(this).val());
+	});
 }
 
 function resetLife(){
