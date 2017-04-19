@@ -52,7 +52,7 @@ function initEventHandlers(){
 	$("#toolTip").qtip({
 	    content:{
 	      prerender : true,
-	      text:  tmpl("seedSelectorTmpl", {})
+	      text:  "Test"//tmpl("seedSelectorTmpl", {})
 	    },
 	    style: {
 	      width: 400,
@@ -198,30 +198,30 @@ function initCanvas(){
 	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 1100000);
 	scene = new THREE.Scene();
 	
-	var urlPrefix = "/Users/marcus/GoL_WebGL/style/img/skybox/";
-	var urls = [
-		urlPrefix + "Galaxy_BK.bmp",
-		urlPrefix + "Galaxy_FT.bmp",
-		urlPrefix + "Galaxy_UP.bmp",
-		urlPrefix + "Galaxy_DN.bmp",
-		urlPrefix + "Galaxy_RT.bmp",
-		urlPrefix + "Galaxy_LT.bmp"
-	];
+	// var urlPrefix = "C:/Dev/Game-of-Life/style/img/skybox/";
+	// var urls = [
+		// urlPrefix + "Galaxy_BK.bmp",
+		// urlPrefix + "Galaxy_FT.bmp",
+		// urlPrefix + "Galaxy_UP.bmp",
+		// urlPrefix + "Galaxy_DN.bmp",
+		// urlPrefix + "Galaxy_RT.bmp",
+		// urlPrefix + "Galaxy_LT.bmp"
+	// ];
 
-	var textureCube = THREE.ImageUtils.loadTextureCube( urls );
-	//textureCube.format = THREE.RGBFormat;
-	var shader = THREE.ShaderLib[ "cube" ];
-	shader.uniforms[ "tCube" ].value = textureCube;
+	// var textureCube = THREE.ImageUtils.loadTextureCube( urls );
+	// //textureCube.format = THREE.RGBFormat;
+	// var shader = THREE.ShaderLib[ "cube" ];
+	// // shader.uniforms[ "tCube" ].value = textureCube;
 
-	cubematerial = new THREE.ShaderMaterial({
-	    fragmentShader: shader.fragmentShader,
-	    vertexShader: shader.vertexShader,
-	    uniforms: shader.uniforms,
-	    depthWrite: false,
-	    side: THREE.BackSide
-	});
-	skyBox = new THREE.Mesh(new THREE.CubeGeometry(10000,10000,10000), cubematerial);
-	scene.add(skyBox);
+	// cubematerial = new THREE.ShaderMaterial({
+	    // fragmentShader: shader.fragmentShader,
+	    // vertexShader: shader.vertexShader,
+	    // uniforms: shader.uniforms,
+	    // depthWrite: false,
+	    // side: THREE.BackSide
+	// });
+	// skyBox = new THREE.Mesh(new THREE.CubeGeometry(10000,10000,10000), cubematerial);
+	// scene.add(skyBox);
 
 	controls = new THREE.FirstPersonControls(camera);
 	controls.movementSpeed = 80;
@@ -353,8 +353,8 @@ function animateCubeSizes(){
 
 function getGridDimensions(){
 	return {
-		height: 40,
-		width: 40	
+		height: 80,
+		width: 80	
 	};
 }
 
